@@ -65,7 +65,7 @@ namespace Badaczek.Identity.Web.Resources {
         /// </summary>
         public static string Register_FirstName {
             get {
-                return ResourceManager.GetString("Register.FirstName", resourceCulture);
+                return ResourceManager.GetString("Register_FirstName", resourceCulture);
             }
         }
         
@@ -74,7 +74,7 @@ namespace Badaczek.Identity.Web.Resources {
         /// </summary>
         public static string Validation_Required {
             get {
-                return ResourceManager.GetString("Validation.Required", resourceCulture);
+                return ResourceManager.GetString("Validation_Required", resourceCulture);
             }
         }
     }

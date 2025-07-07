@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Register.FirstName" xml:space="preserve">
+  <data name="Register_FirstName" xml:space="preserve">
     <value>Imię</value>
   </data>
-  <data name="Validation.Required" xml:space="preserve">
+  <data name="Validation_Required" xml:space="preserve">
     <value>To pole jest wymagane</value>
   </data>
 </root>

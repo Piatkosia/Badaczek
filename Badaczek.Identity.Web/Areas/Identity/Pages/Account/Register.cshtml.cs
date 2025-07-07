@@ -67,8 +67,8 @@ namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-            [Required(ErrorMessage = "Validation.Required")]
-            [Display(Name = "Register.FirstName", ResourceType = typeof(SharedResources))]
+            [Required(ErrorMessage = "Validation_Required")]
+            [Display(Name = "Register_FirstName", ResourceType = typeof(SharedResources))]
             public string FirstName { get; set; }
 
             [Required]
