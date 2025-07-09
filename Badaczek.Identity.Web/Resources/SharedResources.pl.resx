@@ -117,8 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Register" xml:space="preserve">
+    <value>Rejesracja</value>
+  </data>
   <data name="Register_FirstName" xml:space="preserve">
     <value>Imię</value>
+  </data>
+  <data name="Register_LastName" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="Register_Password" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="Register_PreferredLanguage" xml:space="preserve">
+    <value>Preferowany język</value>
+  </data>
+  <data name="Register_ResearchUnit" xml:space="preserve">
+    <value>Jednostka badawcza</value>
+  </data>
+  <data name="Register_Title" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="Validation_Confirm_password" xml:space="preserve">
+    <value>Potwierdź hasło</value>
+  </data>
+  <data name="Validation_Passwd" xml:space="preserve">
+    <value>{0}  musi mieć co najmniej {2} i nie więcej jak  {1} znaków.</value>
+  </data>
+  <data name="Validation_passwd_not_match" xml:space="preserve">
+    <value>Hasło i jego potwierdzenie się różnią.</value>
   </data>
   <data name="Validation_Required" xml:space="preserve">
     <value>To pole jest wymagane</value>

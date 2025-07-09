@@ -61,11 +61,92 @@ namespace Badaczek.Identity.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.FirstName.
         /// </summary>
         public static string Register_FirstName {
             get {
                 return ResourceManager.GetString("Register_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.LastName.
+        /// </summary>
+        public static string Register_LastName {
+            get {
+                return ResourceManager.GetString("Register_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_Password.
+        /// </summary>
+        public static string Register_Password {
+            get {
+                return ResourceManager.GetString("Register_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_PreferredLanguage.
+        /// </summary>
+        public static string Register_PreferredLanguage {
+            get {
+                return ResourceManager.GetString("Register_PreferredLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_ResearchUnit.
+        /// </summary>
+        public static string Register_ResearchUnit {
+            get {
+                return ResourceManager.GetString("Register_ResearchUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_Title.
+        /// </summary>
+        public static string Register_Title {
+            get {
+                return ResourceManager.GetString("Register_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation_Confirm_password.
+        /// </summary>
+        public static string Validation_Confirm_password {
+            get {
+                return ResourceManager.GetString("Validation_Confirm_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} must be at least {2} and at max {1} characters long..
+        /// </summary>
+        public static string Validation_Passwd {
+            get {
+                return ResourceManager.GetString("Validation_Passwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation_passwd_not_mach.
+        /// </summary>
+        public static string Validation_passwd_not_match {
+            get {
+                return ResourceManager.GetString("Validation_passwd_not_match", resourceCulture);
             }
         }
         

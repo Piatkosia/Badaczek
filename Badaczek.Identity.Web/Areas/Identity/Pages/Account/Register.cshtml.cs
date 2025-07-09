@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 
 namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
 {
@@ -26,13 +27,14 @@ namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-
+        private readonly IStringLocalizer<SharedResources> _localizer;
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IStringLocalizer<SharedResources> localizer)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -40,6 +42,7 @@ namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _localizer = localizer;
         }
 
         /// <summary>
@@ -67,33 +70,36 @@ namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-            [Required(ErrorMessage = "Validation_Required")]
+            [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(SharedResources))]
             [Display(Name = "Register_FirstName", ResourceType = typeof(SharedResources))]
             public string FirstName { get; set; }
 
-            [Required]
+            [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(SharedResources))]
+            [Display(Name = "Register_LastName", ResourceType = typeof(SharedResources))]
             public string LastName { get; set; }
 
+            [Display(Name = "Register_ResearchUnit", ResourceType = typeof(SharedResources))]
             public string ResearchUnit { get; set; }
 
+            [Display(Name = "Register_PreferredLanguage", ResourceType = typeof(SharedResources))]
             public string PreferredLanguage { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(SharedResources))]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "E-mail")]
             public string Email { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(SharedResources))]
+            [StringLength(100, ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = "Validation_Passwd", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Register_Password", ResourceType = typeof(SharedResources))]
             public string Password { get; set; }
 
             /// <summary>
@@ -101,14 +107,16 @@ namespace Badaczek.Identity.Web.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Validation_Confirm_password", ResourceType = typeof(SharedResources))]
+            [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(SharedResources))]
+            [Compare("Password", ErrorMessageResourceName = "Validation_passwd_not_match", ErrorMessageResourceType = typeof(SharedResources))]
             public string ConfirmPassword { get; set; }
         }
 
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            ViewData["Title"] = _localizer["Register_Title"];
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
