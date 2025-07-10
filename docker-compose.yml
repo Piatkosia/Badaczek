@@ -1,0 +1,25 @@
+services:
+  badaczek.identity.web:
+    image: ${DOCKER_REGISTRY-}badaczekidentityweb
+    build:
+      context: .
+      dockerfile: Badaczek.Identity.Web/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=BadaczekDb;User Id=sa;Password=Your_password123;TrustServerCertificate=true;
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - SA_PASSWORD=Your_password123
+      - ACCEPT_EULA=Y
+    volumes:
+      - sql_data:/var/opt/mssql
+
+volumes:
+  sql_data:

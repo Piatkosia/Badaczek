@@ -2,8 +2,9 @@ using System.Globalization;
 
 using Badaczek.Identity.Data;
 
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -23,9 +24,13 @@ namespace Badaczek.Identity.Web
             //add support for localization
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //add support for extra fields
+            builder.Services
+                .AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            builder.Services.AddControllersWithViews().AddViewLocalization()
+
+            builder.Services.AddControllersWithViews()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization(options =>
                      {
                          options.DataAnnotationLocalizerProvider = (type, factory) =>
@@ -75,6 +80,25 @@ namespace Badaczek.Identity.Web
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                //okazuje siê, ¿e depend nie daje nam pewnoœci, ¿e serwer bêdzie "sta³" od razu.
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var retries = 10;
+                while (retries > 0)
+                {
+                    try
+                    {
+                        db.Database.Migrate();
+                        break;
+                    }
+                    catch (SqlException ex)
+                    {
+                        retries--;
+                        Thread.Sleep(5000);
+                    }
+                }
+            }
             app.Run();
         }
     }

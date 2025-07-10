@@ -1,5 +1,7 @@
 using Badaczek.WebUI.Data;
+
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Badaczek.WebUI
@@ -45,6 +47,26 @@ namespace Badaczek.WebUI
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                //okazuje siê, ¿e depend nie daje nam pewnoœci, ¿e serwer bêdzie "sta³" od razu.
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var retries = 10;
+                while (retries > 0)
+                {
+                    try
+                    {
+                        db.Database.Migrate();
+                        break;
+                    }
+                    catch (SqlException ex)
+                    {
+                        retries--;
+                        Thread.Sleep(5000);
+                    }
+                }
+            }
 
             app.Run();
         }

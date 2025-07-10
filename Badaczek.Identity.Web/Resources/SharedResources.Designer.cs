@@ -61,11 +61,83 @@ namespace Badaczek.Identity.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Identity_ConcurrencyFailure.
+        /// </summary>
+        public static string Identity_ConcurrencyFailure {
+            get {
+                return ResourceManager.GetString("Identity_ConcurrencyFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DefaultError.
+        /// </summary>
+        public static string Identity_DefaultError {
+            get {
+                return ResourceManager.GetString("Identity_DefaultError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_InvalidToken.
+        /// </summary>
+        public static string Identity_InvalidToken {
+            get {
+                return ResourceManager.GetString("Identity_InvalidToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_LoginAlreadyAssociated.
+        /// </summary>
+        public static string Identity_LoginAlreadyAssociated {
+            get {
+                return ResourceManager.GetString("Identity_LoginAlreadyAssociated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_PasswordMismatch.
+        /// </summary>
+        public static string Identity_PasswordMismatch {
+            get {
+                return ResourceManager.GetString("Identity_PasswordMismatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_RecoveryCodeRedemptionFailed.
+        /// </summary>
+        public static string Identity_RecoveryCodeRedemptionFailed {
+            get {
+                return ResourceManager.GetString("Identity_RecoveryCodeRedemptionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reg_test.
         /// </summary>
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_button.
+        /// </summary>
+        public static string Register_button {
+            get {
+                return ResourceManager.GetString("Register_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register_CreateAccount.
+        /// </summary>
+        public static string Register_CreateAccount {
+            get {
+                return ResourceManager.GetString("Register_CreateAccount", resourceCulture);
             }
         }
         

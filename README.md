@@ -16,3 +16,5 @@ Add-Migration NazwaMigracji -Project Badaczek.Identity.Data -StartupProject Bada
 Update-Database -StartupProject Badaczek.Identity.Web 
 
 ```
+
+Tak, możecie mnie pogryźć, że na razie dałam hasło do bazy w dockercompose, ale no, to do developmpentu na razie, "żeby w ogóle działało", potem będzie zmienione przed pierwszym jakimś deployem gdziekolwiek. 

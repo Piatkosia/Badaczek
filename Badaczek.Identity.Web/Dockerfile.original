@@ -13,7 +13,6 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Badaczek.Identity.Web/Badaczek.Identity.Web.csproj", "Badaczek.Identity.Web/"]
-COPY ["Badaczek.Identity.Data/Badaczek.Identity.Data.csproj", "Badaczek.Identity.Data/"]
 RUN dotnet restore "./Badaczek.Identity.Web/Badaczek.Identity.Web.csproj"
 COPY . .
 WORKDIR "/src/Badaczek.Identity.Web"
