@@ -79,11 +79,29 @@ namespace Badaczek.Identity.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email &apos;{0}&apos; is invalid..
+        /// </summary>
+        public static string Identity_InvalidEmail {
+            get {
+                return ResourceManager.GetString("Identity_InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Identity_InvalidToken.
         /// </summary>
         public static string Identity_InvalidToken {
             get {
                 return ResourceManager.GetString("Identity_InvalidToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username {0} is invalid, can only contain letters or digits..
+        /// </summary>
+        public static string Identity_InvalidUserName {
+            get {
+                return ResourceManager.GetString("Identity_InvalidUserName", resourceCulture);
             }
         }
         

@@ -123,8 +123,14 @@
   <data name="Identity_DefaultError" xml:space="preserve">
     <value>DefaultError</value>
   </data>
+  <data name="Identity_InvalidEmail" xml:space="preserve">
+    <value>Email '{0}' is invalid.</value>
+  </data>
   <data name="Identity_InvalidToken" xml:space="preserve">
     <value>Identity_InvalidToken</value>
+  </data>
+  <data name="Identity_InvalidUserName" xml:space="preserve">
+    <value>Username {0} is invalid, can only contain letters or digits.</value>
   </data>
   <data name="Identity_LoginAlreadyAssociated" xml:space="preserve">
     <value>Identity_LoginAlreadyAssociated</value>

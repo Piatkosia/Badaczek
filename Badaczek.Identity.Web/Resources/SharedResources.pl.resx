@@ -123,8 +123,14 @@
   <data name="Identity_DefaultError" xml:space="preserve">
     <value>Coś poszło nie tak.</value>
   </data>
+  <data name="Identity_InvalidEmail" xml:space="preserve">
+    <value>Adres e-mail '{0}' jest niepoprawny.</value>
+  </data>
   <data name="Identity_InvalidToken" xml:space="preserve">
     <value>Nieprawidłowy token.</value>
+  </data>
+  <data name="Identity_InvalidUserName" xml:space="preserve">
+    <value>Nazwa użytkownika '{0}' jest nieprawidłowa, może zawierać wyłącznie litery i cyfry.</value>
   </data>
   <data name="Identity_LoginAlreadyAssociated" xml:space="preserve">
     <value>Ten login jest już przez kogoś zajęty.</value>

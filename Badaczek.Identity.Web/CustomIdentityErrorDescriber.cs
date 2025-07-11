@@ -60,6 +60,23 @@ namespace Badaczek.Identity.Web
             };
         }
 
+        public override IdentityError InvalidUserName(string userName)
+        {
+            return new IdentityError
+            {
+                Code = nameof(InvalidUserName),
+                Description = String.Format(SharedResources.Identity_InvalidUserName, userName)
+            };
+        }
+
+        public override IdentityError InvalidEmail(string email)
+        {
+            return new IdentityError
+            {
+                Code = nameof(InvalidEmail),
+                Description = String.Format(SharedResources.Identity_InvalidEmail, email)
+            };
+        }
         //jutro pododaję następne. Starczy.
     }
 }
