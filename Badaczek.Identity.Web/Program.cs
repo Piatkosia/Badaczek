@@ -24,9 +24,10 @@ namespace Badaczek.Identity.Web
             //add support for localization
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            //add support for extra fields
+            //add support for extra fields and polish translation
             builder.Services
                 .AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddErrorDescriber<CustomIdentityErrorDescriber>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddControllersWithViews()

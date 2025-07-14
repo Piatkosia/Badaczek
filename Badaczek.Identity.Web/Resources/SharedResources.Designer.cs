@@ -79,11 +79,47 @@ namespace Badaczek.Identity.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email &apos;{0}&apos; is already taken..
+        /// </summary>
+        public static string Identity_DuplicateEmail {
+            get {
+                return ResourceManager.GetString("Identity_DuplicateEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Role name &apos;{0}&apos; is already taken..
+        /// </summary>
+        public static string Identity_DuplicateRoleName {
+            get {
+                return ResourceManager.GetString("Identity_DuplicateRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username &apos;{0}&apos; is already taken..
+        /// </summary>
+        public static string Identity_DuplicateUserName {
+            get {
+                return ResourceManager.GetString("Identity_DuplicateUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email &apos;{0}&apos; is invalid..
         /// </summary>
         public static string Identity_InvalidEmail {
             get {
                 return ResourceManager.GetString("Identity_InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role name &apos;{0}&apos; is invalid..
+        /// </summary>
+        public static string Identity_InvalidRoleName {
+            get {
+                return ResourceManager.GetString("Identity_InvalidRoleName", resourceCulture);
             }
         }
         
@@ -124,11 +160,101 @@ namespace Badaczek.Identity.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Identity_PasswordRequiresDigit.
+        /// </summary>
+        public static string Identity_PasswordRequiresDigit {
+            get {
+                return ResourceManager.GetString("Identity_PasswordRequiresDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_PasswordRequiresLower.
+        /// </summary>
+        public static string Identity_PasswordRequiresLower {
+            get {
+                return ResourceManager.GetString("Identity_PasswordRequiresLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_PasswordRequiresNonAlphanumeric.
+        /// </summary>
+        public static string Identity_PasswordRequiresNonAlphanumeric {
+            get {
+                return ResourceManager.GetString("Identity_PasswordRequiresNonAlphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords must use at least {0} different characters..
+        /// </summary>
+        public static string Identity_PasswordRequiresUniqueChars {
+            get {
+                return ResourceManager.GetString("Identity_PasswordRequiresUniqueChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_PasswordRequiresUpper.
+        /// </summary>
+        public static string Identity_PasswordRequiresUpper {
+            get {
+                return ResourceManager.GetString("Identity_PasswordRequiresUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords must be at least {0} characters..
+        /// </summary>
+        public static string Identity_PasswordTooShort {
+            get {
+                return ResourceManager.GetString("Identity_PasswordTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Identity_RecoveryCodeRedemptionFailed.
         /// </summary>
         public static string Identity_RecoveryCodeRedemptionFailed {
             get {
                 return ResourceManager.GetString("Identity_RecoveryCodeRedemptionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_UserAlreadyHasPassword.
+        /// </summary>
+        public static string Identity_UserAlreadyHasPassword {
+            get {
+                return ResourceManager.GetString("Identity_UserAlreadyHasPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User already in role &apos;{0}&apos;..
+        /// </summary>
+        public static string Identity_UserAlreadyInRole {
+            get {
+                return ResourceManager.GetString("Identity_UserAlreadyInRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity_UserLockoutNotEnabled.
+        /// </summary>
+        public static string Identity_UserLockoutNotEnabled {
+            get {
+                return ResourceManager.GetString("Identity_UserLockoutNotEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User is not in role &apos;{0}&apos;.
+        /// </summary>
+        public static string Identity_UserNotInRole {
+            get {
+                return ResourceManager.GetString("Identity_UserNotInRole", resourceCulture);
             }
         }
         
